@@ -1,271 +1,315 @@
 :root {
-            /* Palette: Deep Forest (Mộc) */
-            --primary-color: #34d399; /* Emerald 400 - Sáng hơn để nổi bật trên nền tối */
-            --primary-hover: #10b981;
-            --bg-dark: #0f172a;       /* Slate 900 */
-            --bg-card: #1e293b;       /* Slate 800 */
-            --text-main: #f1f5f9;     /* Slate 100 - Trắng sáng */
-            --text-sub: #cbd5e1;      /* Slate 300 - Xám bạc (Dễ đọc hơn) */
-            --nav-bg: rgba(15, 23, 42, 0.7); /* Nền kính mờ */
-        }
+    /* Palette: Deep Forest (Mộc - Dark Mode Trending) */
+    --primary-color: #34d399; /* Emerald 400 - Xanh ngọc sáng */
+    --primary-hover: #10b981; /* Emerald 500 */
+    --bg-dark: #0f172a;       /* Slate 900 - Nền chính */
+    --bg-card: #1e293b;       /* Slate 800 - Nền thẻ */
+    --text-main: #f1f5f9;     /* Slate 100 - Trắng sáng */
+    --text-sub: #cbd5e1;      /* Slate 300 - Xám bạc dễ đọc */
+    --nav-bg: rgba(15, 23, 42, 0.7); /* Nền Navbar kính mờ */
+}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.7; /* Tăng khoảng cách dòng cho dễ đọc */
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.7; /* Khoảng cách dòng thoáng */
+}
 
-        /* Typography fixes */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
-        }
+/* --- TYPOGRAPHY & UTILITIES --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
 
-        /* Override Bootstrap text-muted for better visibility */
-        .text-muted {
-            color: var(--text-sub) !important;
-        }
+/* Override mặc định text-muted của Bootstrap để sáng hơn trên nền tối */
+.text-muted {
+    color: var(--text-sub) !important;
+}
 
-        .section-padding {
-            padding: 100px 0;
-        }
+.section-padding {
+    padding: 100px 0;
+}
 
-        /* --- MODERN NAVBAR --- */
-        .navbar {
-            padding: 20px 0;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(12px); /* Hiệu ứng kính mờ */
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
+/* --- MODERN NAVBAR (Glassmorphism) --- */
+.navbar {
+    padding: 20px 0;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
 
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--text-main) !important;
-            letter-spacing: -1px;
-        }
-        
-        .navbar-brand span {
-            color: var(--primary-color);
-        }
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-main) !important;
+    letter-spacing: -1px;
+}
 
-        .nav-link {
-            color: var(--text-sub) !important;
-            font-weight: 500;
-            margin-left: 25px;
-            position: relative;
-            transition: 0.3s;
-        }
+.navbar-brand span {
+    color: var(--primary-color);
+}
 
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-color) !important;
-        }
+.nav-link {
+    color: var(--text-sub) !important;
+    font-weight: 500;
+    margin-left: 25px;
+    position: relative;
+    transition: 0.3s;
+}
 
-        /* Underline effect for nav links */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
 
-        /* --- HERO SECTION --- */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px; /* Bù trừ cho fixed navbar */
-        }
+/* Hiệu ứng gạch chân chạy khi hover menu */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
 
-        .hero-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(52, 211, 153, 0.1);
-            color: var(--primary-color);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            border: 1px solid rgba(52, 211, 153, 0.2);
-        }
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+}
 
-        .hero-title {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* --- HERO SECTION --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
 
-        /* Buttons */
-        .btn-custom {
-            background-color: var(--primary-color);
-            color: #0f172a; /* Chữ đậm trên nền xanh sáng */
-            padding: 14px 35px;
-            border-radius: 50px; /* Bo tròn trending */
-            font-weight: 600;
-            border: none;
-            transition: all 0.3s ease;
-        }
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(52, 211, 153, 0.1);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    border: 1px solid rgba(52, 211, 153, 0.2);
+}
 
-        .btn-custom:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(52, 211, 153, 0.2);
-        }
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .btn-outline-custom {
-            background-color: transparent;
-            border: 2px solid rgba(255,255,255,0.2);
-            color: var(--text-main);
-            padding: 12px 33px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+/* Custom Buttons */
+.btn-custom {
+    background-color: var(--primary-color);
+    color: #0f172a;
+    padding: 14px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
 
-        .btn-outline-custom:hover {
-            border-color: var(--text-main);
-            background-color: var(--text-main);
-            color: var(--bg-dark);
-        }
+.btn-custom:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 211, 153, 0.2);
+}
 
-        /* --- CARDS (Skills & About) --- */
-        .skill-card {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 16px;
-            height: 100%;
-            border: 1px solid rgba(255,255,255,0.03);
-            transition: 0.3s;
-        }
+.btn-outline-custom {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: var(--text-main);
+    padding: 12px 33px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-        .skill-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-            background-color: rgba(30, 41, 59, 0.8);
-        }
+.btn-outline-custom:hover {
+    border-color: var(--text-main);
+    background-color: var(--text-main);
+    color: var(--bg-dark);
+}
 
-        .skill-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-sub);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            margin-right: 8px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.2s;
-        }
-        
-        .skill-card:hover .skill-badge {
-            background-color: rgba(52, 211, 153, 0.1);
-            color: var(--primary-color);
-            border-color: rgba(52, 211, 153, 0.2);
-        }
+/* --- CARDS (About & Skills) --- */
+.skill-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 16px;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: 0.3s;
+}
 
-        /* --- PROJECTS --- */
-        .project-card {
-            background-color: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.03);
-            transition: 0.3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+.skill-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    background-color: rgba(30, 41, 59, 0.8);
+}
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
+.skill-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-sub);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.2s;
+}
 
-        .project-img-placeholder {
-            width: 100%;
-            height: 220px;
-            background: linear-gradient(45deg, #1e293b, #334155);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+.skill-card:hover .skill-badge {
+    background-color: rgba(52, 211, 153, 0.1);
+    color: var(--primary-color);
+    border-color: rgba(52, 211, 153, 0.2);
+}
 
-        .project-body {
-            padding: 30px;
-            flex-grow: 1;
-        }
+/* --- PROJECTS CARD & CAROUSEL --- */
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-        .tech-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 
-        /* --- TIMELINE --- */
-        .timeline-item {
-            border-left: 2px solid rgba(255,255,255,0.1);
-            padding-left: 35px;
-            padding-bottom: 50px;
-            position: relative;
-        }
+.project-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #000; /* Nền đen để tôn ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative; /* Để chứa nút carousel */
+}
 
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-        }
+.project-body {
+    padding: 30px;
+    flex-grow: 1;
+}
 
-        .timeline-item::before {
-            content: '';
-            width: 14px;
-            height: 14px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            position: absolute;
-            left: -8px;
-            top: 6px;
-            box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2);
-        }
+.tech-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
 
-        .timeline-date {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            display: inline-block;
-        }
+/* === CAROUSEL CONTROLS FIXED (Final Version) === */
+.carousel-control-prev, .carousel-control-next {
+    width: 50px;
+    background: transparent;
+    opacity: 1;
+    border: none;
+}
 
-        /* Mobile tweaks */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.8rem; }
-            .section-padding { padding: 60px 0; }
-            .navbar-collapse {
-                background-color: var(--bg-dark);
-                padding: 20px;
-                border-radius: 12px;
-                margin-top: 15px;
-                border: 1px solid rgba(255,255,255,0.1);
-            }
-            .nav-link { margin-left: 0; margin-bottom: 10px; }
-        }
+/* Tắt viền sáng (Focus Ring) khi click */
+.carousel-control-prev:focus, 
+.carousel-control-next:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Style cho nút tròn mũi tên */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(15, 23, 42, 0.7);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-size: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Hiệu ứng chuyển màu nền chậm (0.3s) nhưng chuyển kích thước nhanh (0.1s) */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover: Phóng to & Đổi màu xanh */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Active (Nhấn giữ): Thu nhỏ dứt khoát, tắt transition để không lag */
+.carousel-control-prev:active .carousel-control-prev-icon,
+.carousel-control-next:active .carousel-control-next-icon {
+    background-color: var(--primary-color);
+    transform: scale(0.95); 
+    transition: none; 
+}
+/* === END CAROUSEL FIX === */
+
+
+/* --- TIMELINE (Education/History) --- */
+.timeline-item {
+    border-left: 2px solid rgba(255,255,255,0.1);
+    padding-left: 35px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    border-left: 2px solid transparent;
+}
+
+.timeline-item::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: 6px;
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2);
+}
+
+.timeline-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2.8rem; }
+    .section-padding { padding: 60px 0; }
+    
+    .navbar-collapse {
+        background-color: var(--bg-dark);
+        padding: 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .nav-link { margin-left: 0; margin-bottom: 10px; }
+}
