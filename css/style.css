@@ -143,6 +143,31 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--bg-dark);
 }
 
+/* Style mới cho nút viền (Download CV) */
+.btn-outline-custom-downCV {
+    background-color: transparent !important;
+    color: #34d399 !important;
+    border: 2px solid #34d399 !important;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: all 0.3s ease-in-out;
+
+    /* --- PHẦN MỚI THÊM VÀO --- */
+    border-radius: 50px; /* Bo tròn mạnh (hình viên thuốc) */
+    /* Hoặc dùng border-radius: 8px; nếu muốn bo nhẹ góc vuông */
+    text-decoration: none !important; /* Xóa gạch chân mặc định của thẻ link */
+}
+
+/* Hiệu ứng khi di chuột vào (Hover) */
+.btn-outline-custom-downCV:hover {
+    background-color: #34d399 !important;
+    color: #0f172a !important;
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
+    
+    /* Đảm bảo khi hover cũng không bị hiện gạch chân */
+    text-decoration: none !important; 
+}
+
 /* --- CARDS (About & Skills) --- */
 .skill-card {
     background-color: var(--bg-card);
