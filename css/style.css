@@ -23,9 +23,14 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.5px;
 }
 
-/* Override mặc định text-muted của Bootstrap để sáng hơn trên nền tối */
+/* Override mặc định text-muted của Bootstrap */
 .text-muted {
     color: var(--text-sub) !important;
+}
+
+/* Class màu chữ xanh ngọc chủ đạo */
+.text-primary-custom {
+    color: var(--primary-color) !important;
 }
 
 .section-padding {
@@ -110,7 +115,32 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-text-fill-color: transparent;
 }
 
-/* Custom Buttons */
+/* --- HERO AVATAR STYLE --- */
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-avatar {
+    width: 300px;         
+    height: 300px;        
+    object-fit: cover;    
+    border-radius: 50%;   
+    /* Đổi viền thành màu trắng sáng cho thanh lịch */
+    border: 4px solid var(--text-main); 
+    box-shadow: 0 0 25px rgba(241, 245, 249, 0.15); /* Hào quang trắng mờ */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.hero-avatar:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0 35px rgba(241, 245, 249, 0.4); 
+    /* Khi hover thì viền chuyển xanh ngọc tạo điểm nhấn */
+    border-color: var(--primary-color); 
+}
+
+/* --- BUTTONS --- */
 .btn-custom {
     background-color: var(--primary-color);
     color: #0f172a;
@@ -127,45 +157,30 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 20px rgba(52, 211, 153, 0.2);
 }
 
-.btn-outline-custom {
-    background-color: transparent;
-    border: 2px solid rgba(255,255,255,0.2);
-    color: var(--text-main);
-    padding: 12px 33px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-custom:hover {
-    border-color: var(--text-main);
-    background-color: var(--text-main);
-    color: var(--bg-dark);
-}
-
-/* Style mới cho nút viền (Download CV) */
+/* Nút Download CV (Viền trắng, gọn gàng) */
 .btn-outline-custom-downCV {
-    background-color: transparent !important;
-    color: #34d399 !important;
-    border: 2px solid #34d399 !important;
+    background-color: transparent !important; 
+    color: var(--text-main) !important;       
+    border: 2px solid var(--text-main) !important; 
     font-weight: 600;
-    padding: 12px 24px;
+    text-decoration: none !important;
+    border-radius: 50px; 
     transition: all 0.3s ease-in-out;
-
-    /* --- PHẦN MỚI THÊM VÀO --- */
-    border-radius: 50px; /* Bo tròn mạnh (hình viên thuốc) */
-    /* Hoặc dùng border-radius: 8px; nếu muốn bo nhẹ góc vuông */
-    text-decoration: none !important; /* Xóa gạch chân mặc định của thẻ link */
 }
 
-/* Hiệu ứng khi di chuột vào (Hover) */
 .btn-outline-custom-downCV:hover {
-    background-color: #34d399 !important;
-    color: #0f172a !important;
-    box-shadow: 0 0 15px rgba(52, 211, 153, 0.3);
-    
-    /* Đảm bảo khi hover cũng không bị hiện gạch chân */
-    text-decoration: none !important; 
+    background-color: var(--text-main) !important;
+    color: var(--bg-dark) !important; 
+    box-shadow: 0 0 20px rgba(241, 245, 249, 0.4); 
+    text-decoration: none !important;
+}
+
+/* Padding nút Download CV cho màn hình Desktop */
+@media (min-width: 992px) {
+    .btn-outline-custom-downCV {
+        padding: 8px 18px; 
+        font-size: 0.9rem; 
+    }
 }
 
 /* --- CARDS (About & Skills) --- */
@@ -224,12 +239,12 @@ h1, h2, h3, h4, h5, h6 {
 .project-img-placeholder {
     width: 100%;
     height: 220px;
-    background: #000; /* Nền đen để tôn ảnh */
+    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    position: relative; /* Để chứa nút carousel */
+    position: relative; 
 }
 
 .project-body {
@@ -246,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: 10px;
 }
 
-/* === CAROUSEL CONTROLS FIXED (Final Version) === */
+/* === CAROUSEL CONTROLS FIXED === */
 .carousel-control-prev, .carousel-control-next {
     width: 50px;
     background: transparent;
@@ -254,14 +269,12 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-/* Tắt viền sáng (Focus Ring) khi click */
 .carousel-control-prev:focus, 
 .carousel-control-next:focus {
     box-shadow: none !important;
     outline: none !important;
 }
 
-/* Style cho nút tròn mũi tên */
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba(15, 23, 42, 0.7);
     border-radius: 50%;
@@ -269,27 +282,21 @@ h1, h2, h3, h4, h5, h6 {
     height: 3rem;
     background-size: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* Hiệu ứng chuyển màu nền chậm (0.3s) nhưng chuyển kích thước nhanh (0.1s) */
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-/* Hover: Phóng to & Đổi màu xanh */
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
     background-color: var(--primary-color);
     transform: scale(1.1);
 }
 
-/* Active (Nhấn giữ): Thu nhỏ dứt khoát, tắt transition để không lag */
 .carousel-control-prev:active .carousel-control-prev-icon,
 .carousel-control-next:active .carousel-control-next-icon {
     background-color: var(--primary-color);
     transform: scale(0.95); 
     transition: none; 
 }
-/* === END CAROUSEL FIX === */
-
 
 /* --- TIMELINE (Education/History) --- */
 .timeline-item {
@@ -323,7 +330,34 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
 }
 
-/* --- MOBILE RESPONSIVE --- */
+/* Hiệu ứng hover cho link ở footer/contact */
+.hover-white:hover {
+    color: var(--text-main) !important;
+    transition: color 0.3s ease;
+}
+
+/* --- MOBILE & TABLET RESPONSIVE --- */
+@media (max-width: 991px) {
+    .hero-section {
+        padding-top: 140px; 
+        padding-bottom: 60px;
+        align-items: flex-start; /* Bỏ căn giữa dọc trên mobile để nội dung trôi tự nhiên */
+    }
+    /* Avatar nhỏ lại trên đt */
+    .hero-avatar {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+    
+    /* Nút Download CV nhỏ gọn hơn trên đt */
+    .btn-outline-custom-downCV {
+        padding: 6px 16px; 
+        font-size: 0.8rem;  
+        margin-top: 5px;   
+    }
+}
+
 @media (max-width: 768px) {
     .hero-title { font-size: 2.8rem; }
     .section-padding { padding: 60px 0; }
