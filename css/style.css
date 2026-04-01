@@ -1,3 +1,8 @@
+html, body {
+    overflow-x: hidden; /* Cấm tuyệt đối việc cuộn ngang */
+    width: 100%;        /* Ép chiều rộng tối đa chỉ bằng màn hình */
+    position: relative;
+}
 :root {
     /* Palette: Deep Forest (Mộc - Dark Mode Trending) */
     --primary-color: #34d399; /* Emerald 400 - Xanh ngọc sáng */
