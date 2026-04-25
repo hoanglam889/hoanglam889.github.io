@@ -1,3 +1,65 @@
+/* --- OUTER CAROUSEL WRAPPER FOR PROJECTS --- */
+.carousel-outer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.carousel-outer-wrapper .project-carousel {
+    flex: 1 1 auto;
+    height: 100%;
+}
+.project-carousel-img {
+    height: 220px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #000;
+    transition: opacity 0.6s ease;
+}
+.carousel-inner, .carousel-item, .project-carousel-img {
+    height: 100%;
+}
+/* Allow fade transitions (Bootstrap's carousel-fade uses opacity) */
+.carousel-item.active, .carousel-item-next, .carousel-item-prev {
+    display: block;
+}
+/* --- PROJECT CAROUSEL CONTROLS OUTSIDE --- */
+.project-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* place controls inside the image/card so they don't overlap other cards */
+.project-img-placeholder .project-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: transparent;
+}
+.project-img-placeholder .carousel-control-prev.project-carousel-control {
+    left: 12px;
+}
+.project-img-placeholder .carousel-control-next.project-carousel-control {
+    right: 12px;
+}
+@media (max-width: 991px) {
+    .project-img-placeholder .carousel-control-prev.project-carousel-control,
+    .project-img-placeholder .carousel-control-next.project-carousel-control {
+        left: 8px;
+        right: 8px;
+    }
+}
 html, body {
     overflow-x: hidden; /* Cấm tuyệt đối việc cuộn ngang */
     width: 100%;        /* Ép chiều rộng tối đa chỉ bằng màn hình */
