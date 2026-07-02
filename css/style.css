@@ -54,9 +54,10 @@
     right: 12px;
 }
 @media (max-width: 991px) {
-    .project-img-placeholder .carousel-control-prev.project-carousel-control,
-    .project-img-placeholder .carousel-control-next.project-carousel-control {
+    .project-img-placeholder .carousel-control-prev.project-carousel-control {
         left: 8px;
+    }
+    .project-img-placeholder .carousel-control-next.project-carousel-control {
         right: 8px;
     }
 }
